@@ -11,9 +11,10 @@
     <div class="row">
         <div class="col-md-8 mt-3 offset-md-2">
             <h3>{% trans "Sign In" %}</h3>
-
-            <p>{% blocktrans %}Welcome to your Planner<i class="fas fa-list ms-1"></i>. To create your own lists and edit existing ones as well as adding items to them you must be logged in. If you dont have a account yet your can <a class="link" href="{{ signup_url }}">sign up</a> here.
-                .{% endblocktrans %}</p>
+            <br>
+            <p class="text-center welcome-message">{% blocktrans %}Welcome to your Shopping List<i class="fas fa-list ms-1"></i></p>
+            <p>To create your own lists and edit existing ones as well as adding items to them you need to log in. If you dont have a account yet you can <a class="link" href="{{ signup_url }}">sign up</a> here.
+                {% endblocktrans %}</p>
         </div>
     </div>
     <div class="row">
