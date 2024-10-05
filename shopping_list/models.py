@@ -18,7 +18,6 @@ class Item(models.Model):
         List, on_delete=models.CASCADE, related_name="items"
     )
     item_name = models.CharField(max_length=200, unique=False)
-    slug = models.SlugField(max_length=200, unique=True)
     min_quantity = models.IntegerField(default=0, blank=True)
     current_quantity = models.IntegerField(default=0, blank=True)
     priority = models.IntegerField(choices=PRIORITY, default=0)
