@@ -26,7 +26,10 @@ SECRET_KEY = 'django-insecure-#9+6j1-z$o0y(cm^%(d23nx6mq-ofoo*gsrn6@skoqy84&8div
 # DEBUG = True
 DEBUG = False
 
-ALLOWED_HOSTS = ['8000-simonczedu-shoppinglist-d5d1stf51ri.ws.codeinstitute-ide.net','.herokuapp.com']
+ALLOWED_HOSTS = [
+    '8000-simonczedu-shoppinglist-d5d1stf51ri.ws.codeinstitute-ide.net',
+    '.herokuapp.com'
+    ]
 
 
 # Application definition
