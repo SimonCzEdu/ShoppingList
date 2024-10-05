@@ -15,12 +15,11 @@
                         <div class="card-body">
                             <div class="image-container">
                                 <div class="image-flash">
-                                    <p class="list_name">{{ list.list_name }}</p>
+                                    <a href="{% url 'list_detail' list.slug %}" class="list-link">
+                                        <h2 class="list_name text-center">{{ list.list_name }}</h2>
+                                    </a>
                                 </div>
                             </div>
-                            <a href="#" class="list-link">
-                                <h2 class="card-title">{{ post.title }}</h2>
-                            </a>
 
                             <hr />
                             <p class="card-text text-muted h6">{{ post.created_on}}

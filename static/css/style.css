@@ -55,6 +55,7 @@ body {
     color: white;
     margin: 4px;
     text-transform: uppercase;
+    font-size: calc(0.6rem + .9vw);
 }
 
 .masthead {
@@ -91,7 +92,7 @@ body {
     z-index: 100;
 }
 
-.post-link {
+.list-link {
     text-decoration: none;
     color: #445261;
 }
@@ -101,12 +102,12 @@ body {
     color: #E84610;
 }
 
-.post-title {
+.list-title {
     margin-top: 10%;
     margin-left: 5%;
 }
 
-.post-subtitle {
+.list-subtitle {
     margin-left: 5%;
     color: lightgray;
 }
