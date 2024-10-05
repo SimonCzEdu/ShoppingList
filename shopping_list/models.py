@@ -5,7 +5,7 @@ PRIORITY = ((0, "Select Priority"), (1, "Needed"), (2, "Will need soon"), (3, "W
 
 # Create your models here.
 class List(models.Model):
-    list_name = models.CharField(max_length=50, unique=True)
+    list_name = models.CharField(max_length=20, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(
     User, on_delete=models.CASCADE, related_name="shopping_list")
