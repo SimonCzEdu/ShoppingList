@@ -5,4 +5,5 @@ from .models import List
 # Create your views here.
 class ListsOfList(generic.ListView):
     queryset = List.objects.all()
-    template_name = "lists_list.html"
+    template_name = "shopping_list/index.html"
+    paginate_by = 100
