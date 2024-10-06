@@ -2,6 +2,19 @@ body {
     background-color: #F9FAFC;
 }
 
+.navbar {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    background-color: #cbcbcb;
+}
+
+.footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
 .brand {
     font-family: Lato, sans-serif;
     font-size: 1.4rem;
@@ -26,7 +39,7 @@ body {
 }
 
 .main-bg {
-    background-color: #F9FAFC;
+    background-color: #cbcbcb;
 }
 
 .card {
@@ -43,7 +56,7 @@ body {
     bottom: 5%;
     width: 100%;
     left: -2px;
-    background-color: #188181;
+    border-radius: 5px;
 }
 
 .scale {
@@ -51,19 +64,18 @@ body {
     height: auto;
 }
 
-.list_name {
+.list-name {
     color: white;
     margin: 4px;
     text-transform: uppercase;
-    font-size: calc(0.6rem + .9vw);
+    font-size: 1.3rem;
 }
 
 .masthead {
-    margin-top: 10px;
+    margin-top: 3.4rem;
     overflow: hidden;
     position: relative;
     display: inline-block;
-    height: 33vh;
     width: 100%;
 }
 
@@ -71,6 +83,7 @@ body {
     background-color: #445261;
     color: white;
     position: relative;
+    border-radius: 5px;
 }
 
 .masthead-image {
@@ -94,16 +107,16 @@ body {
 
 .list-link {
     text-decoration: none;
-    color: #445261;
+    color: #ffffff;
 }
 
 .list-link:hover,
 .page-link {
-    color: #E84610;
+    color: #44743b;
 }
 
 .list-title {
-    margin-top: 10%;
+    margin-top: 5%;
     margin-left: 5%;
 }
 
@@ -114,7 +127,7 @@ body {
 
 .btn-signup,
 .btn-edit {
-    background-color: #188181;
+    background-color: #2f3333;
     color: #fff;
 }
 
@@ -169,4 +182,44 @@ body {
 
 .welcome-message {    
     margin: 0;
+}
+
+.basket-icon {
+    color: #ffffff !important;
+}
+
+.list-item {
+    padding-left: 3.5%;
+    padding-right: 4.5%;
+    background: #2f3333;
+    display: flex;
+    margin-bottom: 0.7rem;
+    font-size: 1.4rem;
+    text-decoration: none;
+    color: White;
+    box-shadow: 5px 5px #8888888a;
+    border-radius: 5px;
+}
+
+.item-name {
+    margin: 0;
+    flex-basis: 60%;
+}
+
+.item-span {    
+    flex-basis: 40%;
+    text-align: center;
+    align-content: center;
+}
+
+.cart-icon {
+    color: #515354 !important;
+}
+
+.custom-mb {
+    margin-bottom: 5rem !important;
+}
+
+.custom-mt {
+    margin-top: 7rem !important;
 }

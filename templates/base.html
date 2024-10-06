@@ -32,9 +32,10 @@
 <body class="d-flex flex-column h-100 main-bg">
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <nav class="navbar navbar-expand-lg navbar-light maine-bg">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home' %}">Shopping List<i class="fas fa-list ms-1"></i></a>
+            <a class="navbar-brand" href="{% url 'home' %}">Shopping List<i
+                    class="fas fas fa-shopping-cart cart-icon ms-3"></i></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -60,13 +61,29 @@
                             href="{% url 'account_login' %}">Login</a>
                     </li>
                     {% endif %}
-        
+
                     {% if user.is_authenticated %}
                     <p class="text-center login-status">You are logged in as {{ user }}</p>
                     {% else %}
                     <p class="text-center login-status">You are not logged in</p>
                     {% endif %}
                 </ul>
+            </div>
+        </div>
+
+
+        <!-- displaying Django messages -->
+        <div class="container">
+            <div class="row">
+                <div">
+                    {% for message in messages %}
+                    <div class="alert {{ message.tags }} alert-dismissible
+            fade show" id="msg" role="alert">
+                        {{ message | safe }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    {% endfor %}
+                </div>
             </div>
         </div>
     </nav>

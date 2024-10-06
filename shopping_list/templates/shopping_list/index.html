@@ -7,7 +7,7 @@
     <div class="row">
 
         <!-- Shopping List Entries Column -->
-        <div class="col-12 mt-3 left">
+        <div class="col-12 custom-mt left">
             <div class="row">
                 {% for list in list_list %}
                 <div class="col-md-4">
@@ -15,15 +15,12 @@
                         <div class="card-body">
                             <div class="image-container">
                                 <div class="image-flash">
-                                    <a href="{% url 'list_detail' list.slug %}" class="list-link">
-                                        <h2 class="list_name text-center">{{ list.list_name }}</h2>
+                                    <a href="{% url 'list_detail' list.slug %}" class="list-item">
+                                        <h2 class="list-name text-center">{{ list.list_name }}</h2>
                                     </a>
                                 </div>
                             </div>
-
-                            <hr />
-                            <p class="card-text text-muted h6">{{ post.created_on}}
-                            </p>
+                            <br>
                         </div>
                     </div>
                 </div>

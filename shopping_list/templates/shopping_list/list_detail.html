@@ -1,29 +1,58 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 
 {% block content %}
 {% load static %}
+{% load crispy_forms_tags %}
 <div class="masthead">
     <div class="container">
         <div class="row g-0">
-            <div class="col-md-6 masthead-text">
+            <div class="masthead-text">
                 <!-- Post title goes in these h1 tags -->
-                <h1 class="list-title">{{ list.list_name }}</h1>
+                <h1 class="list-title">{{ list.list_name }}
+                    <strong class="basket-icon">
+                        <!-- Displaying count of comments -->
+                        <i class="fas fa-shopping-basket"></i> {{ items_count }}
+                    </strong>
+                </h1>
                 <!-- Post author goes before the | the post's created date goes after -->
-                <p class="list-subtitle">{{ list.author }}</p>
+                <p class="list-subtitle">{{ list.author }} created this list</p>
             </div>
         </div>
     </div>
 </div>
+</div>
 
 <div class="container">
+    <!-- Displaying Items -->
     <div class="row">
-        <div class="col card mb-4  mt-3 left  top">
+        <div class="col-md-8 custom-mb">
             <div class="card-body">
-                <!-- The post content goes inside the card-text. -->
-                <!-- Use the | safe filter inside the template tags -->
-                <p class="card-text">
-                    {{ post.content | safe }}
-                </p>
+                <!-- We want a for loop inside the empty control tags to iterate through each comment in comments -->
+                {% for item in items %}
+                <a href="#" class="list-item list-link">
+                    <p class="item-name">
+                        {{ item.item_name }}
+                    </p>
+                    <span class="item-span">{{ item.current_quantity }}/{{ item.min_quantity }}</span>
+                </a>
+                <!-- Our for loop ends here -->
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- Creating New Items -->
+        <div class="col-md-4 card custom-mb mt-1">
+            <div>
+                {% if user.is_authenticated %}
+                <h3>Add item</h3>
+                <form id="itemForm" method="post">
+                    {{ item_form | crispy }}
+                    {% csrf_token %}
+                    <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Add</button>
+                </form>
+                {% else %}
+                <p>Log in to add items</p>
+                {% endif %}
             </div>
         </div>
     </div>
