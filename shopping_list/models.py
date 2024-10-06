@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-PRIORITY = ((0, "Select Priority"), (1, "Needed"), (2, "Will need soon"), (3, "Would be nice to have"), (4, "It can wait"))
+PRIORITY = ((0, "Needed"), (1, "Will need soon"), (2, "Would be nice to have"), (3, "It can wait"))
 
 # Create your models here.
 class List(models.Model):
@@ -18,13 +18,13 @@ class Item(models.Model):
         List, on_delete=models.CASCADE, related_name="items"
     )
     item_name = models.CharField(max_length=200, unique=False)
-    min_quantity = models.IntegerField(default=0, blank=True)
-    current_quantity = models.IntegerField(default=0, blank=True)
+    min_quantity = models.IntegerField(default=0, blank=False)
+    current_quantity = models.IntegerField(default=0, blank=False)
     priority = models.IntegerField(choices=PRIORITY, default=0)
-    item_price = models.DecimalField(max_digits=6, decimal_places=2, blank=True)
+    item_price = models.DecimalField(default=0, max_digits=6, decimal_places=2, blank=False)
 
     class Meta:
         ordering = ['-list', 'item_name',]
 
     def __str__(self):
-        return f"{self.item_name} for {self.list}"
+        return f"{self.item_name}"
