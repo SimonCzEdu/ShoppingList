@@ -10,20 +10,22 @@
         <div class="col-12 custom-mt left">
             <div class="row">
                 {% for list in list_list %}
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <div class="image-container">
-                                <div class="image-flash">
-                                    <a href="{% url 'list_detail' list.slug %}" class="list-item">
-                                        <h2 class="list-name text-center">{{ list.list_name }}</h2>
-                                    </a>
+                    {% if user.is_authenticated and list.author == user or list.author.username == "Admin" %}
+                        <div class="col-md-4">
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <div class="image-container">
+                                        <div class="image-flash">
+                                            <a href="{% url 'list_detail' list.slug %}" class="list-item">
+                                                <h2 class="list-name text-center">{{ list.list_name }}</h2>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <br>
                                 </div>
                             </div>
-                            <br>
                         </div>
-                    </div>
-                </div>
+                    {% endif %}
                 {% if forloop.counter|divisibleby:3 %}
             </div>
             <div class="row">
