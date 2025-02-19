@@ -1,22 +1,26 @@
 ---
 name: User Story
 about: User Stories Template
-title: User Story
+title: 'User Story:'
 labels: ''
 assignees: ''
 
 ---
 
-As a 
+**As a **
 ***
-I want to be able to:
-
-
-
-***
-So that I can:
+**I want to be able to:**
 
 
 
 ***
-Acceptance Criteria
+**So that I can:**
+
+
+
+***
+**Acceptance Criteria:**
+**01.** 
+**02.** 
+**03.** 
+**04.**
